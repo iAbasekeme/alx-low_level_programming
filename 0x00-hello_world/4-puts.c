@@ -1,12 +1,11 @@
 #include <stdio.h>
 /*
- * main - A program t print "Programming is like building a multilingual puzzle" using puts
+ * main - "Programming is like building a multilingual puzzle" using puts
  *
- * Alawys: Return 0 
- * */
+ * Alawys: Return 0 (success)
+ */
 int main(void)
-{	
-	puts("Programming is like building a multilingual puzzle");
-
-	return 0;
-}	
+{
+	puts("\"Programming is like building a multilingual puzzle);
+	return (0);
+}
