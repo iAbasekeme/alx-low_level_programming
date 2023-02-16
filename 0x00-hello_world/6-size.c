@@ -12,7 +12,7 @@ int main(void)
 	long long int long_Long_Int_Type;
 	float float_Type;
 
-	printf("size of a char : %ld"\n,
+	printf("size of a char : %ld",\n
 		sizeof(char_type));
 	printf("size of a integer_type : %ld",
 		sizeof(integer_type));
