@@ -8,7 +8,7 @@
  * Return: (0)
 */
 int main(void)
-{
+i{
 	int n;
 
 	srand(time(0));
@@ -16,15 +16,15 @@ int main(void)
 
 	if (n > 0)
 	{
-		printf("%d is negative");
+		printf("%d is negative\n", n);
 	}
 	if (n == 0)
 	{
-		printf("%d is zero");
+		printf("%d is zero\n", n);
 	}
 	if (n < 0)
 	{
-		printf("%d is negative");
+		printf("%d is negative\n", n);
 	}
 	return (0);
 }
