@@ -1,12 +1,13 @@
 #include <stdio.h>
+#include <fcntl.h>
 /**
- * main -Entry point
+ * main -A program that prints exactly "and that piece of art is useful\" -
+ * Dora Korpar, 2015-10-19\",followed by a new line,to the stderr."
  *
- * Return: (0)
+ * Return: (1)
 */
 int main(void)
 {
-	fprintf(stderr, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n
-		")
+	write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n" 59);
 	return (1);
 }
