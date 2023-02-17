@@ -1,4 +1,3 @@
-#include <fcntl.h>
 #include <unistd.h>
 /**
  * main -A program that prints exactly "and that piece of art is useful\" -
