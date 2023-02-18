@@ -6,8 +6,10 @@
  */
 int main(void)
 {
-	char alp, q, e;
-
+	char alp,e,q;
+	e='e';
+	q='q';
+		
 	for (alp = 'a'; alp <= 'z'; alp++)
 	{
 	if (alp != e && alp != q)
