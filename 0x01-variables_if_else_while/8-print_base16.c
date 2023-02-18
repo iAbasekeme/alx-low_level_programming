@@ -10,7 +10,7 @@ int main(void)
 	char alp = '1';
 
 	for (alp = '0'; alp <= '9'; alp++)
-	putchar(alp);
+		putchar(alp);
 	for (alp = 'a'; alp <= 'f'; alp++)
-	putchar(alp);
+		putchar(alp);
 }
