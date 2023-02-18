@@ -13,5 +13,5 @@ int main(void)
 		putchar(alp);
 	for (alp = 'a'; alp <= 'f'; alp++)
 		putchar(alp);
-		putchar('\n');
+	putchar('\n');
 }
