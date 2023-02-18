@@ -8,7 +8,8 @@ int main(void)
 {
 	char alp = '1';
 
-	for (alp = 0; alp <= 9; alp++)
+	for (alp = '0'; alp <= '9'; alp++)
 	putchar(alp);
+	putchar('\n');
 	return (0);
 }
