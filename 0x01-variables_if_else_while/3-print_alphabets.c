@@ -10,8 +10,8 @@ int main(void)
 
 	for (alp = 'a'; alp <= 'z'; alp++)
 		putchar(alp);
-	for (Alp = 'A'; Alp <= 'Z'; Alp++)
-		putchar(Alp);
-		putchar('\n')
+	for (elp = 'A'; elp <= 'Z'; elp++)
+		putchar(elp);
+		putchar('\n')'
 	return (0);
 }
