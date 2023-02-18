@@ -10,5 +10,6 @@ int main(void)
 
 	for (alp = '0'; alp <= '9'; alp++)
 	putchar(alp);
+	putchar('\n');
 	return (0);
 }
