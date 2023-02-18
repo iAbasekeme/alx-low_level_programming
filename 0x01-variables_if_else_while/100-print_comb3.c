@@ -13,9 +13,10 @@ int main(void)
 		for (ch2 = '1'; ch2 <= '9'; ch2++)
 			putchar(ch);
 			putchar(ch2);
-			if (ch == '9' && ch2 <= '9')
-				putchar(',');
-				putchar(' ');
+	if (ch == '9' && ch2 <= '9')
+	putchar(',');
+	putchar(' ');
+	
 	putchar('\n');
 	return (0);
 }
