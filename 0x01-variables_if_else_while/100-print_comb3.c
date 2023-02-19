@@ -9,14 +9,14 @@ int main(void)
 {
 	int ch, ch2;
 
-	for (ch = 0; ch < 9; ch++)
+	for (ch = '0'; ch < '9'; ch++)
 	{
-		for (ch2 = 1; ch2 < 10; ch++)
+		for (ch2 = '1'; ch2 < '10'; ch++)
 		{
 			putchar(ch);
 			putchar(ch2);
 
-			if (ch == 8 && ch2 == 9)
+			if (ch == '8' && ch2 == '9')
 
 			putchar(',');
 			putchar(' ');
