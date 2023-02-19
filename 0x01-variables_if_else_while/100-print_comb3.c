@@ -15,11 +15,18 @@ int main(void)
 		{
 			putchar(ch);
 			putchar(ch2);
+<<<<<<< HEAD
 		if (ch == '9' && ch2 <= '9')
 			putchar(',');
 			putchar(' ');
 		}
 	}
+=======
+	if (ch == '9' && ch2 <= '9')
+	putchar(',');
+	putchar(' ');
+	
+>>>>>>> 267955a575f9c995b15b3b9335d4af59ce92b5b7
 	putchar('\n');
 	return (0);
 }
