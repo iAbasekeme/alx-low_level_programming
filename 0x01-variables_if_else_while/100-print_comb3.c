@@ -11,16 +11,15 @@ int main(void)
 
 	for (ch = 0; ch < 9; ch++)
 	{
-		for (ch2 = 1; ch2 <= 9; ch++)
+		for (ch2 = 1; ch2 < 10; ch++)
 		{
 			putchar(ch);
 			putchar(ch2);
 
-			if (ch < 9 && ch2 == 9)
-			{
-				putchar(',');
-				putchar(' ');
-			}
+			if (ch == 8 && ch2 == 9)
+
+			putchar(',');
+			putchar(' ');
 		}
 	}
 	putchar('\n');
