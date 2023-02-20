@@ -13,12 +13,12 @@ int main(void)
 	for (ch = '0'; ch < '9'; ch++)
 	{
 		for (ch2 = ch + '1'; ch2 <= '9'; ch++)
-		{			
+		{
 			putchar(ch);
 			putchar(ch2);			
 
 			if (ch < '8' && ch2 <= '9')
-				continue;			
+				continue;
 			putchar(',');
 			putchar(' ');
 		}
