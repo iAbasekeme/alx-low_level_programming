@@ -18,6 +18,8 @@ int main(void)
 			putchar(ch2);
 
 			if (ch < '8' && ch2 <= '9')
+				continue;
+			
 			putchar(',');
 			putchar(' ');
 		}
