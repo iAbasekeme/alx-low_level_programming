@@ -13,7 +13,7 @@ int main(void)
 	{
 		for (ch2 = ch + '1'; ch2 <= '9'; ch2++)
 		{
-			putchar(ch);
+			putchar(ch2);
 			putchar(ch2);
 
 			if (ch < '8' && ch2 <= '9')
@@ -23,6 +23,5 @@ int main(void)
 		}
 	}
 	putchar('\n');
-	
 	return (0);
 }
