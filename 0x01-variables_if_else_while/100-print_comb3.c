@@ -13,8 +13,8 @@ int main(void)
 	{
 		for (ch2 = ch + 1; ch2 <= '9'; ch2++)
 		{
-			putchar(ch);
 			putchar(ch2);
+			putchar(ch);
 
 			if (ch == 9 && ch2 == 9)
 
