@@ -14,9 +14,11 @@ int main(void)
 	{
 		for (ch2 = ch + '1'; ch2 <= '9'; ch2++)
 		{
-			if (ch != ch2)				
+			if (ch != ch2)
+			{
 				putchar(ch);
 				putchar(ch2);
+			}
 
 			if (ch < '8' && ch2 <= '9')
 				continue;			
