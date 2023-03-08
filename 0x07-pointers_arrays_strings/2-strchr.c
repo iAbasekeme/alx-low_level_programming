@@ -5,8 +5,7 @@
  * @s: the string to be scanned
  * @c: character to be searched in the string
  *
- * Return: a pointer to the first occurrence of
- * the character c in the string str, or NULL if the character is not found.
+ * Return: memory area replaced
  */
 char *_strchr(char *s, char c)
 {
