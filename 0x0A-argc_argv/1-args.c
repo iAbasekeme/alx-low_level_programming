@@ -8,11 +8,9 @@
  *
  * Return: (0)
  */
-<<<<<<< HEAD
-int main(int argc, char *argv[])
-=======
-int main(int argc, char* argv[])
->>>>>>> 6233e0e8235ba841309d5203ba4345eae460b636
+
+
+int main(int argc char* argv[])
 {
 	printf("%d\n", argc);
 	return (0);
