@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 		x = atoi(argv[2]);
 		printf("%d\n", i * x);
 	}
-	else 
+	else
 	{
 		printf("Error\n");
 		return (1);
