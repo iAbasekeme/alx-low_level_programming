@@ -6,10 +6,10 @@
  * @argc: number of arguments
  * @argv: array of string values
  *
- * Return (0)
+ * Return: (0)
  */
-int main(int argc char* argv[])
+int main(int argc, char *argv[])
 {
-	printf("%d\n",argc);
+	printf("%d\n", argc);
 	return (0);
 }
