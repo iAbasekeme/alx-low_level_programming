@@ -34,10 +34,10 @@ char *str_concat(char *s1, char *s2)
 			w[k] = s1[k];
 		if (k >= n)
 		{
-			w[k] = s2[k];
-			j++;
+			w[k] = s2[u];
+			u++;
 		}
 		k++;
 	}
-	s[k] = '\0';
-	return (s);
+	w[k] = '\0';
+	return (w);
