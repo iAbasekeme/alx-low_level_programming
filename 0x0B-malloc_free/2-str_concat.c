@@ -27,17 +27,18 @@ char *str_concat(char *s1, char *s2)
 	w = malloc(l * sizeof(char) + 1);
 	if (w == NULL)
 		return (NULL);
-	j = 0;
+	u = 0;
 	while (k < l)
 	{
 		if (k <= n)
 			w[k] = s1[k];
 		if (k >= n)
 		{
-			w[k] = s2[k];
-			j++;
+			w[k] = s2[u];
+			u++;
 		}
 		k++;
 	}
-	s[k] = '\0';
-	return (s);
+	w[k] = '\0';
+	return (w);
+}
