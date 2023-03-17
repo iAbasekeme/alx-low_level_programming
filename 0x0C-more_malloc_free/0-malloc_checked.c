@@ -12,9 +12,9 @@ void *malloc_checked(unsigned int b)
 {
 	void *g;
 
-	g = malloc(b * sizeof(unsigned int));
+	g = malloc(b);
 
-	if (p == NULL)
+	if (g == NULL)
 		exit(98);
-	return (p);
+	return (g);
 }
