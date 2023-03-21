@@ -10,6 +10,6 @@
 
 int main(void)
 {
-	_putchar(__FIILE__);
+	printf("%s\n",__FIILE__);
 	return (0);
 }
