@@ -1,9 +1,7 @@
 #include <stdio.h>
-#include "main.h"
 
 /**
- * main - expand into the current file
- * @__FILE__ - the file to expand into
+ * main - expand into the current file and print name
  *
  * Return: 0
  */
