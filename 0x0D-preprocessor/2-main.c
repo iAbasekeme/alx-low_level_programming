@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include "main.h"
 
-void main(void)
+int main(void)
 {
 	_putchar(__FIILE__);
+	return (0);
 }
