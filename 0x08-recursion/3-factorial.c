@@ -11,13 +11,12 @@ int factorial(int n)
 int s = 0;
 
 if (n < 0)
-return -1;
+return (-1);
 else if (n == 1)
-return n;
+return (n);
 else
 {
-_putchar(n);
 s = n * factorial(n - 1);
 }
-return s;
+return (s);
 }
