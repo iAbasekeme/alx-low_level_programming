@@ -12,7 +12,7 @@ int _strlen_recursion(char *s)
     int sum = 1;
     if (*s == '\0')
         return 0;
-    printf("%c\n", *s);
+    _putchar(*s);
     int len = _strlen_recursion(s + 1) + sum;
     return len;
 }
