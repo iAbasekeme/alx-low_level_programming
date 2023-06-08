@@ -14,7 +14,7 @@ return -1;
 }
 else if (n == 0 || n == 1)
 return n;
-hint = _sqrt_recursion(n / 2));
+int hint = _sqrt_recursion(n / 2);
 
 if (hint * hint == n)
 return hint;
