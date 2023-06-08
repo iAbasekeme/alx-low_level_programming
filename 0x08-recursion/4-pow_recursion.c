@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _pow_recursion(int x, int y)
+ * _pow_recursion
  * @x: base integer
  * @y: exponent integer
  *
