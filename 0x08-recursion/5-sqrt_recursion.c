@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _sqrt_recursion - a function that returns the natural 
+ * _sqrt_recursion - a function that returns the natural
  * square root of a number.
  * @n: the number to be rounded
  *
@@ -18,7 +18,7 @@ else if (n == 0 || n == 1)
 return (n);
 hint = _sqrt_recursion(n / 2);
 
-if (hint * hint == n)
+if (hint *hint == n)
 return (hint);
 else
 hint = (hint + n / hint) / 2;
