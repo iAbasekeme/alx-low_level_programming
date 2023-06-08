@@ -8,13 +8,14 @@
  */
 int _sqrt_recursion(int n)
 {
+int hint = 0;
 if (n < 0)
 {
 return -1;
 }
 else if (n == 0 || n == 1)
 return n;
-int hint = _sqrt_recursion(n / 2);
+hint = _sqrt_recursion(n / 2);
 
 if (hint * hint == n)
 return hint;
