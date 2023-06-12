@@ -22,6 +22,6 @@ for (; i < argc; i++)
 {
 mult = atoi(argv[1]) * atoi(argv[2]);
 }
-printf("mult is %d\n", mult);
+printf("%d\n", mult);
 return (0);
 }
