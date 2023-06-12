@@ -8,6 +8,7 @@
 *
 * Return: Always 0 (success)
 */
+
 int main(int argc, char *argv[])
 {
 int mult;
@@ -19,7 +20,7 @@ return (1);
 }
 else
 {
-mult = atoi(argv[1]) * atoi(argv[2])
+mult = (atoi(argv[1])) * (atoi(argv[2]))
 printf("%d\n", mult);
 }
 return (0);
