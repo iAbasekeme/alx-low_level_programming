@@ -3,7 +3,6 @@
 
 /**
 * main - a program that prints all arguments it receives.
-*
 * @argc: Argument count
 * @argv: argumnet vector
 *
@@ -11,8 +10,7 @@
 */
 int main(int argc, char *argv[])
 {
-int i = 1;
-int mult = 0;
+int mult;
 
 if (argc != 3)
 {
@@ -21,11 +19,8 @@ return (1);
 }
 else
 {
-int num1 = atoi(argv[1]);
-int num2 = atoi(argv[2]);
-int result = num1 * num2;
-
-printf("%d\n", result);
+mult = atoi(argv[1]) * atoi(argv[2])
+printf("%d\n", mult);
 }
 return (0);
 }
