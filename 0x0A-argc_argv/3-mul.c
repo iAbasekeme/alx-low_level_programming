@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
 
 /**
 * main - a program that prints all arguments it receives.
+*
 * @argc: Argument count
 * @argv: argumnet vector
 *
@@ -16,7 +16,7 @@ int mult = 0;
 
 if (argc != 3)
 {
-printf("ERROR\n");
+printf("Error\n");
 return (1);
 }
 else
