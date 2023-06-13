@@ -25,7 +25,7 @@ count++;
 j++;
 }
 len = count + j;
-alloc = (char *)malloc((len + 1) * sizeof(char));
+alloc = (char *)malloc((len + 2) * sizeof(char));
 if (!alloc)
 {
 return (NULL);
