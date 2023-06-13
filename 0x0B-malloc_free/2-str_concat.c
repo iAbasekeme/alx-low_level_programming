@@ -17,7 +17,7 @@ int count = 0;
 int len;
 if (!(s1 && s2))
 {
-return ("");
+return (" ");
 }
 while (s1[count] && s2[j] != '\0')
 {
