@@ -14,6 +14,7 @@ char *str_concat(char *s1, char *s2)
 char *alloc;
 int i, j = 0;
 int count = 0;
+int len;
 if (!(s1 && s2))
 {
 return ("");
@@ -23,7 +24,7 @@ while (s1[count] && s2[j] != '\0')
 count++;
 j++;
 }
-int len = count + j;
+len = count + j;
 alloc = (char *)malloc((len + 1) * sizeof(char));
 if (!alloc)
 {
