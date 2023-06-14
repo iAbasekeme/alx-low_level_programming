@@ -31,6 +31,8 @@ return (1);
 }
 }
 sum += atoi(argv[i]);
+j = 0;
+
 }
 printf("%d\n", sum);
 return (0);
