@@ -22,7 +22,7 @@ if (!argv[i])
 {
 printf("0\n");
 }
-for (int j = 0; argv[i][j] != '\0'; j++)
+for (; argv[i][j] != '\0'; j++)
 {
 if (!isdigit(argv[i][j]))
 {
