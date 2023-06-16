@@ -40,7 +40,7 @@ i++;
 }
 while (j < n && s2[j] != '\0')
 {
-ptr[i] = s2[j];
+ptr[i + j] = s2[j];
 i++;
 j++;
 }
