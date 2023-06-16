@@ -16,11 +16,11 @@ char *ptr;
 
 if (!(s1 && s2))
 {
-return (" ");
+return " ";
 }
 
 while (s1[s1_len] && s2[s2_len] != '\0')
-{
+    {
 s1_len++;
 s2_len++;
 }
@@ -31,7 +31,7 @@ n = s2_len;
 ptr = (char *)malloc((s1_len + n + 1) * sizeof(char));
 if (!ptr)
 {
-return (NULL);
+return NULL;
 }
 unsigned int i = 0, j = 0;
 while (i < s1_len)
@@ -47,5 +47,5 @@ j++;
 }
 ptr[i] = '\0';
 
-return (ptr);
+return ptr;
 }
