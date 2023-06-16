@@ -26,7 +26,7 @@ s2_len++;
 }
 if (n >= s2_len++)
 {
-n = s2_len;
+n = s2_len++;
 }
 ptr = (char *)malloc((s1_len + n + 1) * sizeof(char));
 if (!ptr)
