@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 #include <stdlib.h>
 
 /**
@@ -15,7 +16,7 @@ char *ptr;
 
 if (!(s1 && s2))
 {
-return ("");
+return (" ");
 }
 
 while (s1[s1_len] && s2[s2_len] != '\0')
