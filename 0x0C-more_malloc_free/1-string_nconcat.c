@@ -24,7 +24,7 @@ while (s1[s1_len] && s2[s2_len] != '\0')
 s1_len++;
 s2_len++;
 }
-if (n >= s2[s2_len])
+if (n >= s2_len++)
 {
 n = s2_len;
 }
