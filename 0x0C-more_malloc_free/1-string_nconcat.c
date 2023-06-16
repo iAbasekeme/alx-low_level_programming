@@ -30,7 +30,7 @@ concat_len = (n >= s2_len) ? s2_len : n;
 ptr = (char *)malloc((s1_len + concat_len + 1) * sizeof(char));
 if (!ptr)
 {
-return NULL;
+return (NULL);
 }
 while (i < s1_len)
 {
@@ -43,5 +43,5 @@ ptr[i + j] = s2[j];
 }
 ptr[i + j] = '\0';
 
-return ptr;
+return (ptr);
 }
