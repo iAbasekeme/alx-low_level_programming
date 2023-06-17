@@ -24,7 +24,7 @@ int **alloc_grid(int width, int height)
         return (NULL);
     for (i = 0; i < height; i++)
     {
-        grid[i] = (int *)calloc(width * sizeof(int));
+        grid[i] = (int *)calloc(width, sizeof(int));
         if (!grid[i])
         {
             for (j = 0; j < i; i++)
