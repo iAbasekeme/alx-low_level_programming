@@ -36,7 +36,7 @@ if ((nmemb == 0) && size == 0)
 return (NULL);
 }
 ptr = (void *)malloc(nmemb * size);
-if (ptr)
+if (ptr != NULL)
 {
 _memset(ptr, 0, nmemb * size);
 }
