@@ -39,7 +39,7 @@ return (NULL);
 ptr = (void *)malloc(nmemb * size);
 if (ptr != NULL)
 {
-char_ptr = (unsigned char *)ptr
+char_ptr = (unsigned char *)ptr;
 _memset(ptr, 0, nmemb * size);
 }
 return (char_ptr);
