@@ -40,6 +40,9 @@ if (ptr != NULL)
 {
 _memset(ptr, 0, nmemb * size);
 }
+else
+{
 return (NULL);
+}
 return (ptr);
 }
