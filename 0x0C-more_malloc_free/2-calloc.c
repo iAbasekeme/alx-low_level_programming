@@ -30,6 +30,7 @@ return (s);
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 void *ptr;
+unsigned char *char_ptr;
 
 if ((nmemb == 0) && size == 0)
 {
@@ -38,7 +39,8 @@ return (NULL);
 ptr = (void *)malloc(nmemb * size);
 if (ptr != NULL)
 {
+char_ptr = (unsigned char *)ptr
 _memset(ptr, 0, nmemb * size);
 }
-return (ptr);
+return (char_ptr);
 }
