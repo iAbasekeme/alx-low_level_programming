@@ -31,16 +31,16 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 char *ptr;
 
-if ((nmemb == 0) && size == 0)
+if (nmemb == 0 && size == 0)
 {
 return (NULL);
 }
-ptr = (char *)malloc(nmemb * size);
+ptr = malloc(nmemb * size);
 if (ptr != NULL)
 {
 _memset(ptr, 0, nmemb * size);
 }
-else
+else if (ptr == NULL)
 {
 return (NULL);
 }
