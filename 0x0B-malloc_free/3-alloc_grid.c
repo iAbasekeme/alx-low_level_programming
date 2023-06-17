@@ -32,9 +32,9 @@ grid[i] = (int *)malloc(width * sizeof(int));
 }
 if (!grid[i])
 {
-for (; i >= 0; i--)
+for (j = 0; j < i; i++)
 {
-free(grid[i]);
+free(grid[j]);
 }
 free(grid);
 return (NULL);
