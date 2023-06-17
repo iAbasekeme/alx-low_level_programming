@@ -29,19 +29,17 @@ return (s);
 */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-void *ptr;
-char *char_ptr;
+char *ptr;
 
 if ((nmemb == 0) && size == 0)
 {
 return (NULL);
 }
-ptr = (void *)malloc(nmemb * size);
+ptr = (char *)malloc(nmemb * size);
 if (ptr != NULL)
 {
-char_ptr = (char *)ptr;
 _memset(ptr, 0, nmemb * size);
 }
 return (NULL);
-return (char_ptr);
+return (ptr);
 }
