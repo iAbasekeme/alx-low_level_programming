@@ -24,29 +24,17 @@ return (c);
 * *_strncpy - a function that copies a string.
 * @dest: destination value
 * @src: source value
-* @n: max num of characters to be appended
 *
 * Return: pointer to string dest
 */
-char *_strncpy(char *dest, char *src, int n)
+char *_strncpy(char *dest, char *src)
 {
-int dlen = 0;
-int j = 0;
+int i;
 
-while (dest[dlen])
-{
-dlen++;
-}
-while (j < n && src[j])
-{
-dest[j] = src[j];
-j++;
-}
-while (j < n)
-{
-dest[j] = '\0';
-j++;
-}
+for (i = 0; src[i]; i++)
+dest[i] = src[i];
+dest[i] = '\0';
+
 return (dest);
 }
 
