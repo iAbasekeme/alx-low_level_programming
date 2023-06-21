@@ -57,22 +57,22 @@ dog = (dog_t *)malloc(sizeof(dog_t));
 if (dog == NULL)
 return (NULL);
 
-dog->name = (char *)malloc(len1 + 1) * sizeof(char));
+dog->name = (char *)malloc((len1 + 1) * sizeof(char));
 if (dog->name == NULL)
 {
 free(dog);
 return (NULL);
 }
-_strncpy(dog->name, name, len1);
+_strncpy(dog->name, name);
 
-dog->owner = (char *)malloc(len2 + 1) * sizeof(char));
+dog->owner = (char *)malloc((len2 + 1) * sizeof(char));
 if (dog->owner == NULL)
 {
 free(dog->name);
 free(dog);
 return (NULL);
 }
-_strncpy(dog->owner, owner, len2);
+_strncpy(dog->owner, owner);
 
 dog->age = age;
 return (dog);
