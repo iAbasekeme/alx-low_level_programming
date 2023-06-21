@@ -74,7 +74,7 @@ return (NULL);
 }
 _strncpy(dog->name, name, _strlen(name));
 
-dog->owner = (char *)malloc((strlen(owner) + 1) * sizeof(char));
+dog->owner = (char *)malloc((_strlen(owner) + 1) * sizeof(char));
 if (dog->owner == NULL)
 {
 free(dog->name);
