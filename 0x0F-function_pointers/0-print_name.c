@@ -3,6 +3,7 @@
 
 /**
  * print_name - A function that prints a name
+ * @name: Name of file to print
  * @f: the file to print
  *
  * Return: nothing
