@@ -61,27 +61,31 @@ return (dest);
 dog_t *new_dog(char *name, float age, char *owner)
 {
 dog_t *dog;
+int len1, len2;
+  
+len1 = _strlen(name);
+len2 = _strlen(owner);
 
 dog = (dog_t *)malloc(sizeof(dog_t));
 if (dog == NULL)
 return (NULL);
 
-dog->name = (char *)malloc((_strlen(name) + 1) * sizeof(char));
+dog->name = (char *)malloc(len1 + 1) * sizeof(char));
 if (dog->name == NULL)
 {
 free(dog);
 return (NULL);
 }
-_strncpy(dog->name, name, _strlen(name));
+_strncpy(dog->name, name, len1);
 
-dog->owner = (char *)malloc((_strlen(owner) + 1) * sizeof(char));
+dog->owner = (char *)malloc(len2 + 1) * sizeof(char));
 if (dog->owner == NULL)
 {
 free(dog->name);
 free(dog);
 return (NULL);
 }
-_strncpy(dog->owner, owner, _strlen(owner));
+_strncpy(dog->owner, owner, len2);
 
 dog->age = age;
 return (dog);
