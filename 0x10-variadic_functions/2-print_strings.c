@@ -18,7 +18,7 @@ va_start(args, n);
 
 for (; i < n; i++)
 {
-char *num = va_arg(args, unsigned int);
+const char *num = va_arg(args, const char *);
 printf("%s", num);
 if (separator != NULL && i < n - 1)
 {
