@@ -4,7 +4,7 @@
 
 /**
  * print_numbers - A function that prints numbers, followed by a new line.
- * @seperator: String to be printed between numbers
+ * @separator: String to be printed between numbers
  * @n: number of arguments passed to the function
  *
  * Return: Always 0 (success)
