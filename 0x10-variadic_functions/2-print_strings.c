@@ -11,25 +11,20 @@
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-    unsigned int i = 0;
+unsigned int i = 0;
 
-    va_list args;
-    va_start(args, n);
+va_list args;
+va_start(args, n);
 
-    for (; i < n; i++)
-    {
-        int num = va_arg(args, unsigned int);
-        printf("%s", num);
-        if (separator != NULL && i < n - 1)
-        {
-            printf("%s", separator);
-        }
-    }
-    va_end(args);
-    printf("\n");
-}
-int main(void)
+for (; i < n; i++)
 {
-    print_strings(", ", 2, "Jay", "Django");
-    return (0);
+int num = va_arg(args, unsigned int);
+printf("%s", num);
+if (separator != NULL && i < n - 1)
+{
+printf("%s", separator);
+}
+}
+va_end(args);
+printf("\n");
 }
