@@ -11,18 +11,21 @@
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
-int i = 0;
-if (size <= 0)
-{
-return (-1);
-}
-if (size > 0)
-{
-for (; i < size; i++)
-{
-if (cmp(array[i]) != 0)
-return (i);
-}
-}
-return (-1);
+    int i = 0;
+    if (array != NULL && size != 0 && cmp != NULL)
+    {
+        if (size <= 0)
+        {
+            return (-1);
+        }
+        if (size > 0)
+        {
+            for (; i < size; i++)
+            {
+                if (cmp(array[i]) != 0)
+                    return (i);
+            }
+        }
+    }
+    return (-1);
 }
