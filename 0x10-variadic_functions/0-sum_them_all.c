@@ -27,9 +27,3 @@ int sum_them_all(const unsigned int n, ...)
     va_end(args);
     return (result);
 }
-int main(void)
-{
-    int len = sum_them_all(4, 98, 1024, 402, -1024);
-    printf("%d", len);
-    return 0;
-}
