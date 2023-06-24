@@ -10,15 +10,15 @@
  */
 void print_all(const char *const format, ...)
 {
-    va_list args;
-    va_start(args, format);
-
     char c;
     int i;
     float f;
     char *s;
-
     int index = 0;
+
+    va_list args;
+    va_start(args, format);
+
     while (format[index] != '\0')
     {
         if (format[index] == 'c')
