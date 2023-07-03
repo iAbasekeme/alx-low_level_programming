@@ -7,7 +7,7 @@
  * number of elements in a linked list_t list.
  * @h: link to the head property
  *
- * Return - Number of elements
+ * Return: Number of elements
  */
 size_t list_len(const list_t *h)
 {
