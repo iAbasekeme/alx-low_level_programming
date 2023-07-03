@@ -16,7 +16,7 @@ size_t print_list(const list_t *h)
     {
         if (temp->str != NULL)
         {
-            printf("%zu\n", temp->str);
+            printf("%s\n", temp->str);
         }
         else
         {
@@ -25,5 +25,5 @@ size_t print_list(const list_t *h)
         length++;
         temp = temp->next;
     }
-    return length;
+    return (length);
 }
