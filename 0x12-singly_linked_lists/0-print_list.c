@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <string.h>
 #include "lists.h"
 #include <stdio.h>
 
@@ -11,8 +13,12 @@
 size_t print_list(const list_t *h)
 {
 	const list_t *temp = h;
-	size_t length = 0;
+	size_t len = 0;
 
+	if (!temp)
+	{
+		return (0);
+	}
 	while (temp != NULL)
 	{
 		if (temp->str != NULL)
@@ -23,8 +29,9 @@ size_t print_list(const list_t *h)
 		{
 			printf("[0] (nil)\n");
 		}
-		length++;
+		len++;
 		temp = temp->next;
 	}
-	return (length);
+
+	return (len);
 }
