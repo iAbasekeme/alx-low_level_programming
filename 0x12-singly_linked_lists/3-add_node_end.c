@@ -1,4 +1,7 @@
+#include <stdio.h>
 #include "lists.h"
+#include <stdlib.h>
+#include <string.h>
 
 /**
  * add_node_end - A function to insert a node
@@ -8,7 +11,6 @@
  *
  * Return: New node at the end of the list
  */
-
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *newNode;
@@ -22,10 +24,10 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 	newNode->str = strdup(str);
 	newNode->len = len;
-	newNode->next = NULL;
+	newNode->next = 0;
 	temp = (*head);
 
-	while (temp->next != NULL)
+	while (temp->next != 0)
 	{
 		temp = temp->next;
 	}
