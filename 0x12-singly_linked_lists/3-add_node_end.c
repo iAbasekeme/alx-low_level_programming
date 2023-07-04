@@ -5,6 +5,8 @@
  * at the end of a linked list.
  * @head: Link to the head Property
  * @str: data type to be inserted
+ *
+ * Return: New node at the end of the list
  */
 
 list_t *add_node_end(list_t **head, const char *str)
