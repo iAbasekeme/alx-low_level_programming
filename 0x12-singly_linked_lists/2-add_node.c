@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "lists.h"
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * add_node - a function that
@@ -22,7 +23,7 @@ list_t *add_node(list_t **head, const char *str)
 	newNode = (list_t *)malloc(sizeof(list_t));
 	if (!newNode)
 		return (NULL);
-	newNode->str = _strdup(str);
+	newNode->str = strdup(str);
 	newNode->next = *head;
 	*head = newNode;
 
