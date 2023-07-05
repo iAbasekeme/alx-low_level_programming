@@ -3,9 +3,9 @@
 #include <stdio.h>
 
 /**
- * listint_len - a function that returns
- * the number of elements in a linked listint_t list.
- * @h: Head property
+ * listint_len - a function that returns the
+ * number of elements in a linked listint_t list.
+ * @h: link to the head property
  *
  * Return: Number of elements in the list
  */
@@ -19,7 +19,7 @@ size_t listint_len(const listint_t *h)
 	while (temp)
 	{
 		count++;
-		temp = temp->n;
+		temp = temp->next;
 	}
 	return (count);
 }
