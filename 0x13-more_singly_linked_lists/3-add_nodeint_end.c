@@ -8,6 +8,8 @@
  * node at the end of a nodelist
  * @head: head property
  * @n: Node to be created
+ *
+ * Return: New Node address
  */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
