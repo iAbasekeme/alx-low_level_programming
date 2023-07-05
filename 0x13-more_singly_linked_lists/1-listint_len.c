@@ -1,5 +1,6 @@
 #include "lists.h"
 #include <stddef.h>
+#include <stdio.h>
 
 /**
  * listint_len - a function that returns
@@ -15,7 +16,7 @@ size_t listint_len(const listint_t *h)
 
 	if (!temp)
 		return (0);
-	while (temp != NULL)
+	while (temp)
 	{
 		count++;
 		temp = temp->n;
