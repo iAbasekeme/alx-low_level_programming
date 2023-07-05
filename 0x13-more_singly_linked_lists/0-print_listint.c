@@ -11,6 +11,7 @@ size_t print_listint(const listint_t *h)
 {
 	const listint_t *temp = h;
 	unsigned int count = 0;
+
 	if (!temp)
 	{
 		return (0);
