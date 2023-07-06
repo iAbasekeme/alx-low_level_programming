@@ -8,6 +8,8 @@
  * nth node of a listint_t linked list.
  * @head: Pointer to the head property
  * @index: index to be searched
+ *
+ * Return: Listed nth node in listint_t
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
@@ -23,5 +25,5 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 		temp = temp->next;
 		count++;
 	}
-	return temp;
+	return (temp);
 }
