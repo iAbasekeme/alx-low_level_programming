@@ -4,7 +4,7 @@
 #include <string.h>
 
 /**
- * sum_listintt - a function that returns the sum of all the data(n)
+ * sum_listint - a function that returns the sum of all the data(n)
  * @head: Pointer to the head property
  *
  * Return: The sum of all data(n)
