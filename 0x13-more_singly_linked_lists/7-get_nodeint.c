@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "lists.h"
 #include <stdlib.h>
-#include <string.h>
+#include <stddef.h>
 
 /**
  * get_nodeint_at_index - a function that returns the
@@ -21,8 +21,10 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
 	while (temp != NULL && count < index)
 	{
+		if (count == index)
+			return temp;
 		temp = temp->next;
 		count++;
 	}
-	return (temp);
+	return (NULL);
 }
