@@ -1,7 +1,4 @@
 #include "lists.h"
-#include <stddef.h>
-#include <stdlib.h>
-#include <string.h>
 
 /**
  * print_listint - prints all the elements of a linked list
