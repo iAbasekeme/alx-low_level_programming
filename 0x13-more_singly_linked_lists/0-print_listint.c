@@ -4,20 +4,14 @@
 #include <string.h>
 
 /**
- * print_listint - A function that prints all the elements
- * of a listint_t list
+ * print_listint - prints all the elements of a linked list
  * @h: The head property
- *
- * Return: All the elements in the list
+ * Return: number of nodes
  */
 size_t print_listint(const listint_t *h)
 {
 	size_t count = 0;
 
-	if (!h)
-	{
-		return (0);
-	}
 	while (h)
 	{
 		printf("%d\n", h->n);
