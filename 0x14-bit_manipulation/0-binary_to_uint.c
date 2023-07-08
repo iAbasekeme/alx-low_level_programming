@@ -14,6 +14,8 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int result = 0;
 	unsigned int base = 1;
 
+	if (!b)
+		return (0);
 	while (b)
 	{
 		length++;
@@ -26,10 +28,9 @@ unsigned int binary_to_uint(const char *b)
 		}
 		else if (b[i] != '0')
 		{
-			printf("Invalid binary number\n");
-			return 0;
+			return (0);
 		}
 		base *= 2;
 	}
-	return result;
+	return (result);
 }
