@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * binary_to_unit - A function that converts a binary
+ * binary_to_uint - A function that converts a binary
  * number to an unsigned int
  * @b: A string containing the binary number
  * Return: The converted number in unit
