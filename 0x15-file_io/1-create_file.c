@@ -9,42 +9,25 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	FILE *file;
-	char *buffer;
 	char *cont = text_content;
-	int i = 0;
-	int filedescriptor;
+	int fd;
 	ssize_t writebytes;
 
 	if (!filename)
 		return (-1);
-	filedescriptor = open(filename, O_CREAT | O_WRONLY | O_EXCL | O_TRUNC,
-						  S_IRUSR, S_IWUSR);
-	if (filedescriptor == -1)
+	fd = open(filename, O_CREAT | O_WRONLY | O_EXCL | O_TRUNC,
+			  S_IRUSR, S_IWUSR);
+	if (fd == -1)
 		return (-1);
-	file = fdopen(filedescriptor, "w");
-
-	if (!file)
-		return (-1);
-	buffer = (char *)malloc((strlen(cont + 1)) * sizeof(char));
-	if (!buffer)
+	if (cont != NULL)
 	{
-		fclose(file);
-		return (-1);
-	}
-	while (cont[i] != '\0')
-	{
-		buffer[i] = cont[i];
-		i++;
-	}
-	buffer[i] = '\0';
-
-	writebytes = fwrite(buffer, sizeof(char), i, file);
-	fclose(file);
-	free(buffer);
-	if (writebytes != i)
-	{
-		return (-1);
+		ssize_t len = strlen(cont);
+		writebytes = write(fd, cont, len);
+		if (writebytes != len)
+		{
+			close(fd);
+			return (-1);
+		}
 	}
 	return (1);
 }
