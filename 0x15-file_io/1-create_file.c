@@ -9,9 +9,9 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	char *cont = text_content;
 	int fd;
 	ssize_t writebytes;
+	ssize_t len;
 
 	if (!filename)
 		return (-1);
@@ -19,10 +19,11 @@ int create_file(const char *filename, char *text_content)
 			  S_IRUSR, S_IWUSR);
 	if (fd == -1)
 		return (-1);
-	if (cont != NULL)
+	if (text_content != NULL)
 	{
-		ssize_t len = strlen(cont);
-		writebytes = write(fd, cont, len);
+		len = strlen(text_content);
+		writebytes = write(fd, text_content, len);
+
 		if (writebytes != len)
 		{
 			close(fd);
