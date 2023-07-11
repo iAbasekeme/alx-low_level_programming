@@ -29,7 +29,7 @@ int create_file(const char *filename, char *text_content)
 	buffer = (char *)malloc((strlen(cont + 1)) * sizeof(char));
 	if (!buffer)
 	{
-		close(file);
+		fclose(file);
 		return (-1);
 	}
 	while (cont[i] != '\0')
