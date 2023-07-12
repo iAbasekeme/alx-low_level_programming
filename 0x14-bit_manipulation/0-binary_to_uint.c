@@ -9,14 +9,14 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int length;
+	int length = 0;
 	int i;
 	unsigned int result = 0;
 	unsigned int base = 1;
 
 	if (!b)
 		return (0);
-	while (b)
+	while (b[length] != '\0')
 	{
 		length++;
 	}
