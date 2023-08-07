@@ -11,23 +11,25 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	size_t i = 0;
-	char buffer[letters];
+	ssize_t byteWritten;
+	int fd;
+	ssize_t readFiles;
+	char buffer[1024];
 
 	if (!filename)
 		return (0);
-	int fd = open(filename, O_RDONLY);
+	fd = open(filename, O_RDONLY);
 
 	if (fd == -1)
 		return (0);
-	ssize_t readFiles = read(fd, buffer, letters);
+	readFiles = read(fd, buffer, letters);
 
 	if (readFiles == -1)
 	{
 		close(fd);
 		return (0);
 	}
-	ssize_t byteWritten = write(STDOUT_FILENO, buffer, readFiles);
+	byteWritten = write(STDOUT_FILENO, buffer, readFiles);
 
 	close(fd);
 	if (byteWritten == -1 || byteWritten != readFiles)
