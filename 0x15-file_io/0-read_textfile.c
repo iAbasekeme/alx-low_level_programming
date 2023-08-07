@@ -15,21 +15,24 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char buffer[letters];
 
 	if (!filename)
-		return 0;
+		return (0);
 	int fd = open(filename, O_RDONLY);
+
 	if (fd == -1)
-		return 0;
+		return (0);
 	ssize_t readFiles = read(fd, buffer, letters);
+
 	if (readFiles == -1)
 	{
 		close(fd);
-		return 0;
+		return (0);
 	}
 	ssize_t byteWritten = write(STDOUT_FILENO, buffer, readFiles);
+
 	close(fd);
 	if (byteWritten == -1 || byteWritten != readFiles)
 		close(fd);
-		return 0;
+	return (0);
 
 	return byteWritten;
 }
