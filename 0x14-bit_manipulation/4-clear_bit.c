@@ -13,9 +13,9 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	unsigned int hold;
 
 	if (index >= sizeof(unsigned int) * 8)
-		return -1;
+		return (-1);
 	hold = ~(1 << index);
 	*n &= hold;
 
-	return 1;
+	return (1);
 }
