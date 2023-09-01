@@ -6,11 +6,13 @@
  * would need to flip to get from one number to another.
  * @n: input
  * @m: integer representing number of flips to make
+ *
+ * Return: number of bits
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	int xorResult = n ^ m;
-	int count = 0;
+	unsigned int count = 0;
 
 	while (xorResult > 0)
 	{
