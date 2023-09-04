@@ -20,10 +20,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (!filename)
 		return (0);
-	fd = open("filename", O_RDONLY);
+	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 	{
-		close(fd);
 		return (0);
 	}
 
@@ -31,8 +30,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (buffer == NULL)
 	{
 		close(fd);
-		free(buffer);
-		exit(0);
+		return (0);
 	}
 	bytesRead = read(fd, buffer, letters);
 
@@ -50,6 +48,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		close(fd);
 		return (0);
 	}
-
+	free(buffer);
+	close(fd);
 	return (bytesRead);
 }
