@@ -20,17 +20,13 @@ int create_file(const char *filename, char *text_content)
 
 	if (!filename)
 		return (-1);
-	fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 600);
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 600);
 
 	if (fd == -1)
 		return (-1);
-	while (text_content[count] != '\0')
-	{
-		count++;
-	}
 	if (text_content != NULL)
 	{
-		byteswritten = write(fd, text_content, count);
+		byteswritten = write(fd, text_content, strlen(text_content));
 		if (byteswritten == -1)
 		{
 			close(fd);
