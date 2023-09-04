@@ -12,27 +12,25 @@
  *
  * Return: Number of letters to be read and printed
  */
-
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
 	ssize_t byteswritten, bytesRead;
-	char *buffer[100] = NULL;
-	int *ptr;
+	char *buffer;
 
 	if (!filename)
 		return (0);
 	fd = open("filename", O_RDONLY);
 	if (fd == -1)
 	{
-		fclose(fd);
+		close(fd);
 		return (0);
 	}
 
-	*buffer = (char *)malloc(sizeof(char) * letters + 1);
-	if (!buffer)
+	buffer = (char *)malloc(sizeof(char) * letters + 1);
+	if (buffer == NULL)
 	{
-		fclose(fd);
+		close(fd);
 		free(buffer);
 		exit(0);
 	}
@@ -41,7 +39,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (bytesRead == -1)
 	{
 		free(buffer);
-		fclose(fd);
+		close(fd);
 		return (0);
 	}
 	byteswritten = write(STDOUT_FILENO, buffer, letters);
@@ -49,7 +47,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if ((byteswritten == -1) || (byteswritten != bytesRead))
 	{
 		free(buffer);
-		fclose(fd);
+		close(fd);
 		return (0);
 	}
 
