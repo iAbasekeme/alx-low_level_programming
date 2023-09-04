@@ -20,24 +20,17 @@ int create_file(const char *filename, char *text_content)
 
 	if (!filename)
 		return (-1);
-	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 600);
-
-	if (fd == -1)
-		return (-1);
-	while (text_content[count] != '\0')
-	{
-		count++;
-	}
 	if (text_content != NULL)
 	{
-		byteswritten = write(fd, text_content, count);
-		if (byteswritten == -1)
+		while (text_content[count])
 		{
-			close(fd);
-			return (-1);
+			count++;
 		}
 	}
-
+	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 600);
+	byteswritten = write(fd, text_content, count);
+	if (fd == -1 || byteswritten == -1)
+		return (-1);
 	close(fd);
 	return (1);
 }
