@@ -4,6 +4,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <errno.h>
 
 /**
  * append_text_to_file - a function that appends text at the end of a file.
@@ -23,7 +24,7 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	if (fd == -1)
 	{
-		if (errno == "ENOENT")
+		if (errno == ENOENT)
 		{
 			return (-1);
 		}
