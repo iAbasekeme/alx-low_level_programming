@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <errno.h>
-
 /**
  * main - a program that copies the content of a file to another file.
  * @argc: argument count
