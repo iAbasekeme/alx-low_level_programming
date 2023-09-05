@@ -13,64 +13,64 @@
  */
 int main(int argc, char *argv[])
 {
-    int ff_open, ft_open, count;
-    ssize_t file_read, file_write;
-    char buffer[1024];
-    const char *file_from;
-    const char *file_to;
+	int ff_open, ft_open, count;
+	ssize_t file_read, file_write;
+	char buffer[1024];
+	const char *file_from;
+	const char *file_to;
 
-    if (argc != 2)
-    {
-        dprintf(2, "Usage: cp file_from file_to\n");
-        exit(97);
-    }
-    file_from = argv[1];
-    file_to = argv[2];
+	if (argc != 2)
+	{
+		dprintf(2, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
+	file_from = argv[1];
+	file_to = argv[2];
 
-    ff_open = open(file_from, O_RDONLY);
-    if (ff_open == -1)
-    {
-        dprintf(2, "Can't read from file %s", file_from);
-        close(ff_open);
-        exit(98);
-    }
-    ft_open = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 664);
-    {
-        if (ft_open == -1)
-        {
-            dprintf(2, "Can't write to %s", file_to);
-            close(ft_open);
-            exit(99);
-        }
-    }
-    count = sizeof(buffer);
-    file_read = read(ff_open, buffer, count);
-    file_write = write(ft_open, buffer, file_read);
+	ff_open = open(file_from, O_RDONLY);
+	if (ff_open == -1)
+	{
+		dprintf(2, "Can't read from file %s", file_from);
+		close(ff_open);
+		exit(98);
+	}
+	ft_open = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 664);
+	{
+		if (ft_open == -1)
+		{
+			dprintf(2, "Can't write to %s", file_to);
+			close(ft_open);
+			exit(99);
+		}
+	}
+	count = sizeof(buffer);
+	file_read = read(ff_open, buffer, count);
+	file_write = write(ft_open, buffer, file_read);
 
-    if (file_read == -1)
-    {
-        dprintf(stderr, "Error: Can't read from file %s", file_from);
-        close(ff_open);
-        close(ft_open);
-        exit(98);
-    }
-    if (file_write == -1)
-    {
-        if (errno == EACCES)
-        {
-            dprintf(stderr, "Error: Can't write to %s", file_to);
-            close(ft_open);
-            close(ft_open);
-            exit(99);
-        }
-    }
-    if ((close(ft_open) == 0 || close(ff_open)) == 0)
-    {
-        dprintf(stderr, "Error: Can't close %d", errno);
-        return (100);
-    }
-    close(ft_open);
-    close(ff_open);
+	if (file_read == -1)
+	{
+		dprintf(stderr, "Error: Can't read from file %s", file_from);
+		close(ff_open);
+		close(ft_open);
+		exit(98);
+	}
+	if (file_write == -1)
+	{
+		if (errno == EACCES)
+		{
+			dprintf(stderr, "Error: Can't write to %s", file_to);
+			close(ft_open);
+			close(ft_open);
+			exit(99);
+		}
+	}
+	if ((close(ft_open) == 0 || close(ff_open)) == 0)
+	{
+		dprintf(stderr, "Error: Can't close %d", errno);
+		return (100);
+	}
+	close(ft_open);
+	close(ff_open);
 
-    return (0);
+	return (0);
 }
