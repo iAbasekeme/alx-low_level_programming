@@ -10,15 +10,17 @@
  *
  *  Return: 0 on (success)
  */
+#define BUFFER_SIZE 1024
+
 int main(int argc, char *argv[])
 {
 	int ff_open, ft_open;
 	ssize_t file_read, file_write;
-	char buffer[1024];
+	char buffer[BUFFER_SIZE];
 	const char *file_from;
 	const char *file_to;
 
-	if (argc != 2)
+	if (argc != 3)
 	{
 		fprintf(stderr, "Usage: cp file_from file_to\n");
 		exit(97);
@@ -39,8 +41,10 @@ int main(int argc, char *argv[])
 		close(ft_open);
 		exit(99);
 	}
-	file_read = read(ff_open, buffer, sizeof(buffer));
-	file_write = write(ft_open, buffer, file_read);
+	while ((file_read = read(ff_open, buffer, BUFFER_SIZE)) > 0)
+	{
+		file_write = write(ft_open, buffer, file_read);
+	}
 
 	if (file_read == -1)
 	{
@@ -51,13 +55,10 @@ int main(int argc, char *argv[])
 	}
 	if (file_write == -1)
 	{
-		if (errno == EACCES)
-		{
-			fprintf(stderr, "Error: Can't write to %s\n", file_to);
-			close(ft_open);
-			close(ft_open);
-			exit(99);
-		}
+		fprintf(stderr, "Error: Can't write to %s\n", file_to);
+		close(ft_open);
+		close(ft_open);
+		exit(99);
 	}
 	if ((close(ft_open) == 0 || close(ff_open)) == 0)
 	{
