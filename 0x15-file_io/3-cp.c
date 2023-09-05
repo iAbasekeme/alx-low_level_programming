@@ -12,7 +12,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int ff_open, ft_open, count;
+	int ff_open, ft_open;
+	int count = 0;
 	ssize_t file_read, file_write;
 	char buffer[1024];
 	const char *file_from;
@@ -42,7 +43,10 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	}
-	count = sizeof(buffer);
+	while (buffer[count] != '\0')
+	{
+		count++;
+	}
 	file_read = read(ff_open, buffer, count);
 	file_write = write(ft_open, buffer, file_read);
 
