@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		dprintf(stderr, "Usage: cp file_from file_to\n");
+		fprintf(stderr, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	file_from = argv[1];
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	ff_open = open(file_from, O_RDONLY);
 	if (ff_open == -1)
 	{
-		dprintf(stderr, "Can't read from file %s", file_from);
+		fprintf(stderr, "Can't read from file %s", file_from);
 		close(ff_open);
 		exit(98);
 	}
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 	{
 		if (ft_open == -1)
 		{
-			dprintf(stderr, "Can't write to %s", file_to);
+			fprintf(stderr, "Can't write to %s", file_to);
 			close(ft_open);
 			exit(99);
 		}
@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 
 	if (file_read == -1)
 	{
-		dprintf(stderr, "Error: Can't read from file %s", file_from);
+		fprintf(stderr, "Error: Can't read from file %s", file_from);
 		close(ff_open);
 		close(ft_open);
 		exit(98);
@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
 	{
 		if (errno == EACCES)
 		{
-			dprintf(stderr, "Error: Can't write to %s", file_to);
+			fprintf(stderr, "Error: Can't write to %s", file_to);
 			close(ft_open);
 			close(ft_open);
 			exit(99);
@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
 	}
 	if ((close(ft_open) == 0 || close(ff_open)) == 0)
 	{
-		dprintf(stderr, "Error: Can't close %d", errno);
+		fprintf(stderr, "Error: Can't close %d", errno);
 		return (100);
 	}
 	close(ft_open);
