@@ -13,7 +13,6 @@
 int main(int argc, char *argv[])
 {
 	int ff_open, ft_open;
-	int count = 0;
 	ssize_t file_read, file_write;
 	char buffer[1024];
 	const char *file_from;
@@ -30,29 +29,22 @@ int main(int argc, char *argv[])
 	ff_open = open(file_from, O_RDONLY);
 	if (ff_open == -1)
 	{
-		fprintf(stderr, "Can't read from file %s", file_from);
-		close(ff_open);
+		fprintf(stderr, "Can't read from file %s\n", file_from);
 		exit(98);
 	}
 	ft_open = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 664);
+	if (ft_open == -1)
 	{
-		if (ft_open == -1)
-		{
-			fprintf(stderr, "Can't write to %s", file_to);
-			close(ft_open);
-			exit(99);
-		}
+		fprintf(stderr, "Can't write to %s", file_to);
+		close(ft_open);
+		exit(99);
 	}
-	while (buffer[count] != '\0')
-	{
-		count++;
-	}
-	file_read = read(ff_open, buffer, count);
+	file_read = read(ff_open, buffer, sizeof(buffer));
 	file_write = write(ft_open, buffer, file_read);
 
 	if (file_read == -1)
 	{
-		fprintf(stderr, "Error: Can't read from file %s", file_from);
+		fprintf(stderr, "Error: Can't read from file %s\n", file_from);
 		close(ff_open);
 		close(ft_open);
 		exit(98);
@@ -61,7 +53,7 @@ int main(int argc, char *argv[])
 	{
 		if (errno == EACCES)
 		{
-			fprintf(stderr, "Error: Can't write to %s", file_to);
+			fprintf(stderr, "Error: Can't write to %s\n", file_to);
 			close(ft_open);
 			close(ft_open);
 			exit(99);
