@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(stderr, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	file_from = argv[1];
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	ff_open = open(file_from, O_RDONLY);
 	if (ff_open == -1)
 	{
-		dprintf(2, "Can't read from file %s", file_from);
+		dprintf(stderr, "Can't read from file %s", file_from);
 		close(ff_open);
 		exit(98);
 	}
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 	{
 		if (ft_open == -1)
 		{
-			dprintf(2, "Can't write to %s", file_to);
+			dprintf(stderr, "Can't write to %s", file_to);
 			close(ft_open);
 			exit(99);
 		}
