@@ -11,7 +11,7 @@
  * @filename: name of file
  * @text_content: string to be added to EOF
  *
- * Rerurn: 1 (on success), otherwise -1
+ * Return: 1 (on success), otherwise -1
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
