@@ -8,15 +8,21 @@
  */
 void print_binary(unsigned long int n)
 {
-	int result = 0;
-	unsigned long int mask = 1UL << 31;
+	int i, count = 0;
+	unsigned long int current;
 
-	for (int i = 0; i < 32; i++)
+	for (i = 63; i >= 0; i--)
 	{
-		int bit = (n & mask) ? 1 : 0;
+		current = n >> i;
 
-		printf("%d", bit);
-		mask >>= 1;
+		if (current & 1)
+		{
+			_putchar('1');
+			count++;
+		}
+		else if (count)
+			_putchar('0');
 	}
-	printf("\n");
+	if (!count)
+		_putchar('0');
 }
