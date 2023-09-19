@@ -13,12 +13,14 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	int xorResult = n ^ m;
 	unsigned int count = 0;
+	int i = 63;
 
-	while (xorResult > 0)
+	while (i >= 0)
 	{
+		xorResult >>= 1;
 		if (xorResult & 1)
 			count++;
-		xorResult >>= 1;
 	}
+	i--;
 	return (count);
 }
