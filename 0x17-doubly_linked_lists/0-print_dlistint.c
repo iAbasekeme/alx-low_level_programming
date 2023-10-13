@@ -8,10 +8,13 @@
 
 size_t print_dlistint(const dlistint_t *h)
 {
+	size_t u = 0;
+
 	while (h != 0)
 	{
-		printf("%d", h->n);
+		printf("%zu", h->n);
 		h = h->next;
+		u++;
 	}
-	return (h->n);
+	return u;
 }
