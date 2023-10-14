@@ -1,4 +1,13 @@
 #include "lists.h"
+
+/**
+ * add_dnodeint - A function that adds a node at the beging of a doubly-linked lists
+ * @head: Head of the list
+ * @n: Data from the user
+ *
+ * Return: address of the newNode
+ */
+
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
 	dlistint_t *newNode;
