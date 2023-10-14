@@ -1,7 +1,8 @@
 #include "lists.h"
 
 /**
- * insert_dnodeint_at_index - A fucntion that inserts a node at an index in a list
+ * insert_dnodeint_at_index - A fucntion that inserts
+ * a node at an index in a list
  * @h: head of the list
  * @idx: index of the list
  * @n: Data from user
@@ -24,7 +25,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (idx == 0) /**check if we at the beginning of the list*/
 	{
-		return add_dnodeint(h, n);
+		return (add_dnodeint(h, n));
 	}
 
 	for (; current != NULL && i < idx; i++)
