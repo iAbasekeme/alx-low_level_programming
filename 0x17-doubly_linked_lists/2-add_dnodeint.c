@@ -1,7 +1,8 @@
 #include "lists.h"
 
 /**
- * add_dnodeint - A function that adds a node at the beging of a doubly-linked lists
+ * add_dnodeint - A function that adds a node
+ * at the beging of a doubly-linked lists
  * @head: Head of the list
  * @n: Data from the user
  *
