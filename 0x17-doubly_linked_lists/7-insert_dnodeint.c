@@ -29,24 +29,16 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	for (; current != NULL && i < idx; i++)
 	{
+		if (current == idx)
+		{
+			newNode->prev = current;
+			newNode->next = current->next;
+			current->next = newNode;
+			newNode->next->prev = newNode;
+			return (newNode);
+		}
 		current = current->next;
 	}
-
-	if (current == NULL) /**check if we are at the end of the list*/
-	{
-		return (add_dnodeint_end(h, n));
-	}
-	if (i < idx)
-	{
-		free(newNode);
-		return (NULL);
-	}
-	if (current == idx)
-	{
-		newNode->prev = current;
-		newNode->next = current->next;
-		current->next = newNode;
-		newNode->next->prev = newNode;
-		return (newNode);
-	}
+	free(newNode);
+	return (NULL);
 }
