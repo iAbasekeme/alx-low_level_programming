@@ -22,7 +22,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (idx == 0) /**check if we at the beginning of the list*/
 	{
-		return (add_dnodeint(h, n));
+		newNode->prev = 0;
+		newNode->next = *h;
+		if (*h != NULL)
+		{
+			(*h)->prev = newNode;
+		}
+		*h = newNode;
+		return (newNode);
 	}
 
 	for (; current != NULL && i < idx; i++)
