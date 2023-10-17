@@ -1,46 +1,40 @@
 #include "main.h"
 #include <stdlib.h>
 #include <unistd.h>
-
 /**
- * read_textfile - short description
+ * read_textfile - reads a text file and prints it to the
+ * POSIX standard output.
+ * @filename: pointer to file.
+ * @letters: number of bytes of the characters in the file.
  *
- * Description: long description
  *
- * @filename: argument_1 description
- * @letters: argument_2 description
- *
- * Return: return description
+ * Return: return the charcaters read to std. ouput.
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	size_t number_of_characters_printed;
-	int character_to_print;
-	FILE *file_stream;
-
-	number_of_characters_printed = 0;
+	int fd;
+	char *ptr;
+	size_t read_bytes, write_bytes;
 
 	if (filename == NULL)
 		return (0);
 
-	file_stream = fopen(filename, "r");
-
-	if (file_stream == NULL)
+	ptr = malloc(sizeof(char) * letters);
+	if (ptr == NULL)
 		return (0);
 
-	character_to_print = fgetc(file_stream);
-	while (number_of_characters_printed <= letters)
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
 	{
-		if (number_of_characters_printed == letters || character_to_print == -1)
-			break;
-		if (write(STDOUT_FILENO, &character_to_print, 1) == -1)
-			return (0);
-
-		number_of_characters_printed++;
-		character_to_print = fgetc(file_stream);
+		return (0);
 	}
 
-	fclose(file_stream);
-	return (number_of_characters_printed);
+	read_bytes = read(fd, ptr, letters);
+	write_bytes = write(STDOUT_FILENO, ptr, read_bytes);
+
+	close(fd);
+
+	free(ptr);
+	return (write_bytes);
 }
