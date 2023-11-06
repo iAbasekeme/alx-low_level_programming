@@ -14,5 +14,6 @@ unsigned long int key_index(const unsigned char *key, unsigned long int size)
 		return (0);
 	hash = hash_djb2(key);
 
-	return (hash % size); /**Calculate the index by taking the modulo of the hash with the size of the hash table.*/
+	return (hash % size); /**Calculate the index by taking the modulo of the
+	hash with the size of the hash table.*/
 }
