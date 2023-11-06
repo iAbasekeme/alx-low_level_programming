@@ -1,6 +1,6 @@
 #include "hash_tables.h"
 /**
- * hash_table_create: This function creates a hash table
+ * hash_table_create - This function creates a hash table
  * @size: This is the size of the hash table
  *
  * Return: The new address of the allocated array of linkedlists
