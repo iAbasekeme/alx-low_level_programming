@@ -8,19 +8,11 @@
  */
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-	unsigned long int idx;
-	unsigned long int i = 0;
+	unsigned long int hash;
 
 	if (!key || size == 0)
 		return (0);
-	idx = hash_djb2(key);
+	hash = hash_djb2(key);
 
-	for (; i < size; i++)
-	{
-		if (idx == i)
-		{
-			return (i);
-		}
-	}
-	return (size);
+	return (hash % size); /**Calculate the index by taking the modulo of the hash with the size of the hash table.*/
 }
