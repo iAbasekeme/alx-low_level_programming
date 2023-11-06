@@ -22,14 +22,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (!kv->key)
 	{
-		free(kv->key);
 		free(kv);
 		return (0);
 	}
 
 	if (!kv->value)
 	{
-		free(kv->value);
 		free(kv);
 		return (0);
 	}
