@@ -36,12 +36,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (ht->array[idx] == NULL)
 	{
+		ht->array[idx] = kv;
 		kv->next = NULL;
 	}
 	else
 	{
 		kv->next = ht->array[idx];
+		ht->array[idx] = kv;
 	}
-	ht->array[idx] = kv;
+
 	return (1);
 }
