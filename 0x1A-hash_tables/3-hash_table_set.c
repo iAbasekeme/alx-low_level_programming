@@ -28,8 +28,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (!kv->value)
 	{
+		free(kv->key);
 		free(kv);
-		return (0);
 	}
 
 	if (ht->array[idx] == NULL)
