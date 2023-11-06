@@ -22,13 +22,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (!kv->key)
 	{
+		free(kv->key);
 		free(kv);
 		return (0);
 	}
 
 	if (!kv->value)
 	{
-		free(kv->key);
+		free(kv->value);
 		free(kv);
 		return (0);
 	}
@@ -40,7 +41,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		kv->next = ht->array[idx];
-		ht->array[idx] = kv;
 	}
+	ht->array[idx] = kv;
 	return (1);
 }
