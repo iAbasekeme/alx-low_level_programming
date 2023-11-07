@@ -11,7 +11,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *kv;
 	unsigned long int hash = key_index((const unsigned char *)key, ht->size);
-	unsigned long int idx = hash % ht->size;
 
 	kv = (hash_node_t *)malloc(sizeof(hash_node_t));
 	if (!kv)
@@ -34,15 +33,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 
-	if (ht->array[idx] == NULL)
+	if (ht->array[hash] == NULL)
 	{
-		ht->array[idx] = kv;
+		ht->array[hash] = kv;
 		kv->next = NULL;
 	}
 	else
 	{
-		kv->next = ht->array[idx];
-		ht->array[idx] = kv;
+		kv->next = ht->array[hash];
+		ht->array[hash] = kv;
 	}
 
 	return (1);
