@@ -14,6 +14,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *dup_value;
 	unsigned long int hash = key_index((const unsigned char *)key, ht->size);
 	kv = (hash_node_t *)malloc(sizeof(hash_node_t));
+
 	if (!kv)
 		return (0);
 	kv->key = strdup(key);
