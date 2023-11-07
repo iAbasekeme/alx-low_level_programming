@@ -17,8 +17,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	kv->key = strdup(key);
-	kv->value = strdup(value);
-
 	if (!kv->key)
 	{
 		free(kv->key);
@@ -26,6 +24,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 
+	kv->value = strdup(value);
 	if (!kv->value)
 	{
 		free(kv->value);
