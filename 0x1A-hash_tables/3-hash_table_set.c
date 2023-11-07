@@ -10,6 +10,8 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *kv;
+	hash_node_t *current;
+	int dup_value;
 	unsigned long int hash = key_index((const unsigned char *)key, ht->size);
 
 	kv = (hash_node_t *)malloc(sizeof(hash_node_t));
@@ -29,6 +31,21 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(kv->key);
 		free(kv);
 		return (0);
+	}
+
+	current = ht->array[hash];
+	while (current != NULL)
+	{
+		if (strcmp(key, current->key) == 0)
+		{
+			dup_value = strdup(value); /*Store the value */
+			if (dup_value == NULL)
+				return (0);
+			free(current->value);		/* Free the current value*/
+			current->value = dup_value; /* then update it*/
+			return (1);
+		}
+		current = current->next;
 	}
 
 	if (ht->array[hash] == NULL)
