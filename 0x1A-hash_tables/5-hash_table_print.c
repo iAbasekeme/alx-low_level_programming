@@ -24,10 +24,10 @@ void hash_table_print(const hash_table_t *ht)
 			{
 				printf(", ");
 			}
-			printf("'%s': '%s'", cur->key, cur->value);
-			first = 0;
-			cur = cur->next;
 		}
+		printf("'%s': '%s'", cur->key, cur->value);
+		first = 0;
+		cur = cur->next;
 	}
 	printf("}\n");
 }
