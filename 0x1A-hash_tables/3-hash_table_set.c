@@ -37,12 +37,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht->array[hash] == NULL)
 	{
 		ht->array[hash] = kv;
-		kv->next = NULL;
+		return (1);
 	}
 	else
 	{
 		kv->next = ht->array[hash];
 		ht->array[hash] = kv;
+		return (1);
 	}
-	return (1);
 }
