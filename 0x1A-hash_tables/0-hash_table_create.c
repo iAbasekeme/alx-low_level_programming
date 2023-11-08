@@ -3,7 +3,7 @@
  * hash_table_create - This function creates a hash table
  * @size: This is the size of the hash table
  *
- * Return: The new address of the allocated array of linkedlists
+ * return: The new address of the allocated array of linkedlists
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
