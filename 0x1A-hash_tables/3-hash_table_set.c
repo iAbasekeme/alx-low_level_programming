@@ -11,9 +11,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *kv;
 	unsigned long int hash;
+
 	if (ht == NULL || key == NULL || *key == '\0')
 	{
-		return 0;
+		return (0);
 	}
 	hash = key_index((const unsigned char *)key, ht->size);
 	kv = (hash_node_t *)malloc(sizeof(hash_node_t));
