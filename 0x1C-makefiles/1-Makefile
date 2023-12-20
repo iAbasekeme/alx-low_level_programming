@@ -1,5 +1,6 @@
 CC = gcc
 SRC := *.c
+
 all school
 
 school : $(SRC) m.h
