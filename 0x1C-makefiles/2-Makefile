@@ -14,7 +14,11 @@ $(Name) : $(OBJ)
 	$(CC) $(OBJ) -o $(Name)
 
 %.o %.c : 
-	$(CC) -c $(Name)
+	$(CC) -c $< -o $@
+# $(CC): This is the compiler command (e.g., gcc).
+# -c: This option tells the compiler to generate an object file.
+# $<: This is an automatic variable representing the first prerequisite (in this case, the source file).
+# -o $@: This option tells the compiler to output the result to the target file.
 
 clean : 
 	rm -f $(OBJ) $(Name)
