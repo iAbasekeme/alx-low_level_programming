@@ -7,9 +7,6 @@ all : $(Name)
 
 $(Name) : $(OBJ) m.h
 	$(CC) $(OBJ) -o $(Name)
-
-%.o %.c : 
-	$(CC) -c $< -o $@
-
+	
 clean : 
 	rm -f $(OBJ) $(Name)
