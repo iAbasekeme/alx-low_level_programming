@@ -7,6 +7,3 @@ all : $(Name)
 
 $(Name) : $(OBJ) m.h
 	$(CC) $(OBJ) -o $(Name)
-
-clean : 
-	rm -f $(OBJ) $(Name)
