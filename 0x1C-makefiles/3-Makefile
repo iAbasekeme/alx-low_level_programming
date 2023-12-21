@@ -11,12 +11,12 @@ $(NAME): $(OBJ)
 	$(CC) -c $< -o $@
 
 clean:
-    -rm -f *~ *.swp $(NAME)
+	-rm -f *~ *.swp $(NAME)
 
 oclean:
-    -rm -f $(OBJ)
+	-rm -f $(OBJ)
 
-fclean: 
+fclean:
 	-clean oclean
 
 re:
