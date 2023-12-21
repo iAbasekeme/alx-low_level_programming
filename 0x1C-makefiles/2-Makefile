@@ -22,3 +22,4 @@ $(Name) : $(OBJ) m.h
 
 clean : 
 	rm -f $(OBJ) $(Name)
+	
