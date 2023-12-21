@@ -10,7 +10,7 @@ OBJ : $(SRC:.c=.o)
 
 all : $(Name)
 
-$(Name) : $(OBJ)
+$(Name) : $(OBJ) m.h
 	$(CC) $(OBJ) -o $(Name)
 
 %.o %.c : 
