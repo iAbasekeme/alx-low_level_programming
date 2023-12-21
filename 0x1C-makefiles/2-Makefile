@@ -1,7 +1,12 @@
 Name : school
 CC : gcc
 SRC : main.c school.c
-OBJ : $(SRC:.c=.o)
+OBJ : $(SRC:.c=.o) 
+# OBJ replaces each occurrence of .c in SRC with .o." In other words, it transforms the 
+# list of source files into a list of corresponding object files.
+
+# The %.o: %.c rule encapsulates this relationship. 
+# It states that for every .c file, there is a corresponding .o file.
 
 all : $(Name)
 
