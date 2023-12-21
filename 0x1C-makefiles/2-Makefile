@@ -2,11 +2,6 @@ Name : school
 CC : gcc
 SRC : main.c school.c
 OBJ : $(SRC:.c=.o) 
-# OBJ replaces each occurrence of .c in SRC with .o." In other words, it transforms the 
-# list of source files into a list of corresponding object files.
-
-# The %.o: %.c rule encapsulates this relationship. 
-# It states that for every .c file, there is a corresponding .o file.
 
 all : $(Name)
 
@@ -15,10 +10,6 @@ $(Name) : $(OBJ) m.h
 
 %.o %.c : 
 	$(CC) -c $< -o $@
-# $(CC): This is the compiler command (e.g., gcc).
-# -c: This option tells the compiler to generate an object file.
-# $<: This is an automatic variable representing the first prerequisite (in this case, the source file).
-# -o $@: This option tells the compiler to output the result to the target file.
 
 clean : 
 	rm -f $(OBJ) $(Name)
