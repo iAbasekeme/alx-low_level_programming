@@ -1,6 +1,6 @@
 #include "search_algos.h"
 /**
- * Binery_search -  A fucntion that searches for a value
+ * linear_search -  A fucntion that searches for a value
  * in an array of integers using
  * the linear searc algorithm
  * @aaray: First element in the array
@@ -9,7 +9,6 @@
  *
  * Return: Value if found, otherwise -1
  */
-
 int linear_search(int *array, size_t size, int value)
 {
         size_t i;
