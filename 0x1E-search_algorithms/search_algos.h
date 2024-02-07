@@ -3,6 +3,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <stddef.h>
 
 int binary_search(int *array, size_t size, int value);
 int linear_search(int *array, size_t size, int value);
