@@ -3,7 +3,7 @@
  * linear_search -  A fucntion that searches for a value
  * in an array of integers using
  * the linear searc algorithm
- * @aaray: First element in the array
+ * @array: First element in the array
  * @size: size of the array
  * @value: searched vlue
  *
