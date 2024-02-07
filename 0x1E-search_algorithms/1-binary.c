@@ -20,7 +20,7 @@ void print_array(int *array, size_t L, size_t R)
 }
 
 /**
- * A function that searches for a value in an array
+ * binary_search - A function that searches for a value in an array
  * of integers using the Linear search algorithm
  * @array: First element in the array
  * @size: size of the Array
